@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database Programming App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding-top: 20px; }
+        .sidebar { background-color: #f8f9fa; padding: 15px; min-height: 100vh; }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 sidebar">
+            <h4>Entities</h4>
+            <div class="list-group" id="entity-menu">
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadEntity('exchange')">Exchanges</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadEntity('security')">Securities</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadEntity('participant')">Participants</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadEntity('orders')">Orders</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadEntity('trade')">Trades</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadEntity('position')">Positions</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadEntity('blocker')">Blockers</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadEntity('blockingpolicy')">BlockingPolicies</a>
+            </div>
+        </nav>
+        <main class="col-md-10">
+            <h2 id="entity-title">Welcome</h2>
+            <button class="btn btn-primary mb-3" id="btn-create" style="display:none;" onclick="showForm()">Create New</button>
+            <div id="table-container">Select an entity from the sidebar to manage it.</div>
+            
+            <!-- Modal Form -->
+            <div class="modal fade" id="formModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="formModalLabel">Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body" id="form-body">
+                    <!-- Form fields injected here -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="saveRecord()">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
