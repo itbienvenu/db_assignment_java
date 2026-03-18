@@ -1,0 +1,7 @@
+# target/ (removed so COPY target/*.jar can work)
+.git/
+.idea/
+*.iml
+mvnw
+mvnw.cmd
+.mvn/

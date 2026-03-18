@@ -1,6 +1,8 @@
-FROM amazoncorretto:17-al2-jdk
-VOLUME /tmp
-COPY . /app
+FROM eclipse-temurin:17-jdk-jammy
+
 WORKDIR /app
-RUN ./mvnw clean package -DskipTests
-ENTRYPOINT ["java","-jar","target/db-programming-assignment-0.0.1-SNAPSHOT.jar"]
+
+COPY target/*.jar app.jar
+
+EXPOSE 8081
+ENTRYPOINT ["java", "-jar", "app.jar"]
